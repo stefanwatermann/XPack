@@ -18,17 +18,19 @@ Attribute names have to start with an at-sign (@), all Attribute values have to 
 
 | Attribute Name | Mandatory | Usage |
 | --- | --- | --- |
-| @Version | yes | Used to detect newer versions of the component by comparing repository with current project |
-| @Guid | yes | Global unique identifier for this component |
-| @Copyright | yes | Copyright of the author/owner of this component |
-| @Description | no | Describes the purpose of the component |
-| @Author | no | Developer name |
+| @Version | yes | Used to detect newer versions of the component by comparing repository with current project. |
+| @Guid | yes | Global unique identifier for this component. New GUIDs can be created by the package manager client. |
+| @Copyright | yes | Copyright of the author/owner of this component. |
+| @Description | no | Describes the purpose of the component. |
+| @Author | no | Developer name. |
 | @Category | no | Can be used to categorize components. |
-| @Depends | no | Comma-separated list of component Guids on to this component has a dependency in any manner |
+| @Depends | no | A comma-separated list of component GUIDs related to this component in some way.|
 
 Please note that Attribute values can be set (or changed) within the XOJO IDE only and not by the package manager client later on.
 
 ## Conditions and Limitation
+
+Because of the XOJO IDE it is not possible to automatically import components to a project. Therefor the Copy&Paste approach have to be used and the Client cannot automatically update existing components on a project.
 
 ## Current State
 
