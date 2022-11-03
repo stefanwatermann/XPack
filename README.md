@@ -30,10 +30,20 @@ Please note that Attribute values can be set (or changed) within the XOJO IDE on
 
 ## Conditions and Limitation
 
+The package manager client is implemented as a standanlone desktop software and is not integrated into the XOJO IDE in any way. 
+
 Because of the XOJO IDE it is not possible to automatically import components to a project. Therefor the Copy&Paste approach have to be used and the Client cannot automatically update existing components on a project.
+
+A component have to be a XOJO Module. Other project items (Folder, Class, Window, etc.) can be included into the Module but cannot be used as a component directly.
+
+The component repository has to be a folder on a (shared) drive to which the computer has access to. A (public) server component is not available so far.
 
 ## Current State
 
 There is a client app avaliable, which allows to use a **locally hosted file-based repository** only. The app can be used to scan an exsiting XOJO project for Modules that are avaialble at the repository and checks the version of the Project Module agains the repository version. It then allows to update Modules to a newer version by using the Copy&Paste approach.
+
+![grafik](https://user-images.githubusercontent.com/73022584/199739505-b2a17389-eac0-47ab-b40a-d94571fdd998.png)
+
+
 
 A server app is currently not available.
