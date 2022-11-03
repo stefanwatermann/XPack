@@ -1,3 +1,3 @@
 # XojoPack
 
-XojoPack is a package manager software for XOJO code. 
+A package manager software for XOJO code. 
