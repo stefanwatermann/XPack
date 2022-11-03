@@ -1,6 +1,6 @@
 # XojoPack
 
-A package manager software for XOJO code. 
+A package manager software for XOJO components. 
 
 <hr/>
 
