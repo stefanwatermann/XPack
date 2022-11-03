@@ -4,16 +4,31 @@ A package manager software for XOJO code.
 
 <hr/>
 
-This project aims to create a software solution which allows to establish a software package repository for XOJO based components (mainly Modlues).
+This project aims to create a software solution which allows to establish a software package repository for XOJO based components (mainly Modules).
 
 ## Concept
 
-This solution can be used to store/restore XOJO components (mainly Modules) into/from a centraliazed repository. Components can be "imported" into existing XOJO projects from the central repository by Copy&Paste. This approach allows the XOJO IDE to integrate the component correctly.
+This solution can be used to store/restore XOJO components (mainly Modules) into/from a centraliazed repository. Components can be "imported" into existing XOJO projects from the central repository by **Copy&Paste**. By using this approach XOJO IDE will integrate the component correctly and the prject or IDE does not need to be reloaded or restarted.
+
+A repository component is typically a regular XOJO Module. To make it visible to the package manager client (XojoPack) at least three Attributes have to be set on the Module.
+
+![grafik](https://user-images.githubusercontent.com/73022584/199735219-fc5d4a2c-23a1-4ca1-bf44-a60149d2deb4.png)
+
+Attribute names have to start with an at-sign (@), all Attribute values have to be strings (enclosed by double quotes).
+
+| Attribute Name | Mandatory | Usage |
+| @Version | yes | Used to detect newer versions of the component by comparing repository with current project |
+| @Guid | yes | Global unique identifier for this component |
+| @Copyright | yes | Copyright of the author/owner of this component |
+| @Description | no | Describes the purpose of the component |
+| @Author | no | Developer name |
+| @Category | no | Can be used to categorize components. |
+| @Depends | no | Comma-separated list of component Guids on to this component has a dependency in any manner |
 
 ## Conditions and Limitation
 
 ## Current State
 
-There is a client app avaliable, which allows to use a locally hosted file-based repository. The app can be used to scan an exsiting XOJO poject for Modules that are avaialble at the repository and checks the version of the Project Module agains the repository version.
+There is a client app avaliable, which allows to use a **locally hosted file-based repository** only. The app can be used to scan an exsiting XOJO project for Modules that are avaialble at the repository and checks the version of the Project Module agains the repository version. It then allows to update Modules to a newer version by using the Copy&Paste approach.
 
 A server app is currently not available.
