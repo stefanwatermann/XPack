@@ -17,6 +17,7 @@ A repository component is typically a regular XOJO Module. To make it visible to
 Attribute names have to start with an at-sign (@), all Attribute values have to be strings (enclosed by double quotes).
 
 | Attribute Name | Mandatory | Usage |
+| --- | --- | --- |
 | @Version | yes | Used to detect newer versions of the component by comparing repository with current project |
 | @Guid | yes | Global unique identifier for this component |
 | @Copyright | yes | Copyright of the author/owner of this component |
@@ -24,6 +25,8 @@ Attribute names have to start with an at-sign (@), all Attribute values have to 
 | @Author | no | Developer name |
 | @Category | no | Can be used to categorize components. |
 | @Depends | no | Comma-separated list of component Guids on to this component has a dependency in any manner |
+
+Please note that Attribute values can be set (or changed) within the XOJO IDE only and not by the package manager client later on.
 
 ## Conditions and Limitation
 
