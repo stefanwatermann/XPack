@@ -8,9 +8,9 @@ This project aims to create a software solution which allows to establish a soft
 
 ## Concept
 
-This solution can be used to store/restore XOJO components (mainly Modules) into/from a centraliazed repository. Components can be "imported" into existing XOJO projects from the central repository by **Copy&Paste**. By using this approach the XOJO IDE will integrate the component correctly and the project or IDE does not need to be reloaded or restarted.
+This solution can be used to store/restore XOJO components (Modules) into/from a centraliazed repository. Components can be "imported" into existing XOJO projects from the central repository by **Copy&Paste**. By using this approach the XOJO IDE will integrate the component correctly and the project or IDE does not need to be reloaded or restarted.
 
-A repository component is typically a regular XOJO Module. To make it visible to the package manager client (XojoPack) at least three Attributes have to be set on the Module.
+A repository component is typically a regular XOJO Module. To make it visible to the package manager client (XPack) at least three Attributes have to be set on the Module.
 
 ![grafik](https://user-images.githubusercontent.com/73022584/199735219-fc5d4a2c-23a1-4ca1-bf44-a60149d2deb4.png)
 
