@@ -1,4 +1,4 @@
-# XojoPack
+# XPack
 
 A package manager software for XOJO components. 
 
@@ -25,6 +25,7 @@ Attribute names have to start with an at-sign (@), all Attribute values have to 
 | @Author | no | Developer name. |
 | @Category | no | Can be used to categorize components. |
 | @Depends | no | A comma-separated list of component GUIDs related to this component in some way.|
+
 
 Please note that Attribute values can be set (or changed) within the XOJO IDE only and not by the package manager client later on.
 
