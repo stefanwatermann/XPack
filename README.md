@@ -57,5 +57,5 @@ A server app is currently in early development stage. It is intended to be hoste
 
 To connect a XPack client to the server repository enter the base url of the repository server on the clients preferences dialog.
 
-<img width="595" alt="image" src="https://user-images.githubusercontent.com/73022584/201532995-fe4f9c35-20b1-4a59-9a80-98f38dc0063b.png">
+<img width="595" alt="image" src="https://user-images.githubusercontent.com/73022584/201533119-8148fe6d-8920-464d-af2d-8935431f8c6f.png">
 
