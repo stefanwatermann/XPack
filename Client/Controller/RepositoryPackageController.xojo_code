@@ -1,8 +1,8 @@
 #tag Class
 Protected Class RepositoryPackageController
 	#tag Method, Flags = &h0
-		Sub Constructor(repositoryFolderPath as string)
-		  self.RepositoryFolderPath = repositoryFolderPath
+		Sub Constructor(packageSource as PackageSourceInterface)
+		  self.PackageSource = packageSource
 		End Sub
 	#tag EndMethod
 
@@ -24,7 +24,18 @@ Protected Class RepositoryPackageController
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
+		Sub Export(guid as string, f as FolderItem)
+		  Var raw As MemoryBlock = self.PackageSource.ReadPackageCode(guid)
+		  Var t As BinaryStream = BinaryStream.Create(f, True)
+		  t.Write(raw)
+		  t.Close
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h0
 		Function GetPackage(guid as string) As RepositoryPackage
+		  // Part of the PackageSourceInterface interface.
+		  
 		  For Each package As RepositoryPackage In Self.Packages
 		    If package.Guid = guid Then
 		      Return package
@@ -36,48 +47,13 @@ Protected Class RepositoryPackageController
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
-		Function GetPackageCode(guid as string) As MemoryBlock
-		  // read XOJO component from repository file
+		Function Import(f as FolderItem) As MemoryBlock
+		  Var t As BinaryStream = BinaryStream.Open(f, False)
+		  Var raw As MemoryBlock = t.Read(f.Length)
+		  t.Close
 		  
-		  Var f As FolderItem = Self.RepositoryFolder.Child(guid + kPackageCodeFileExt)
-		  
-		  If f <> Nil Then
-		    
-		    Var t As BinaryStream = BinaryStream.Open(f, False)
-		    Var a As MemoryBlock = t.Read(f.Length)
-		    t.Close
-		    
-		    Return a
-		    
-		  End If
-		  
-		  Return Nil
+		  return raw
 		End Function
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub ReadPackages()
-		  Self.Packages.RemoveAll
-		  
-		  If Self.RepositoryFolder.Exists Then
-		    
-		    For Each f As FolderItem In Self.RepositoryFolder.Children
-		      If f.Name.EndsWith(kPackageJsonFileExt) Then
-		        
-		        Var rawJson As String = File.ReadAllText(f)
-		        
-		        Var package As New RepositoryPackage 
-		        RepositoryPackage.FromJson(rawJson, package)
-		        
-		        If package.CreatedAt = Nil Then package.CreatedAt = f.ModificationDateTime
-		        
-		        Self.Packages.Add(package)
-		        
-		      End
-		    Next
-		    
-		  end
-		End Sub
 	#tag EndMethod
 
 	#tag Method, Flags = &h0
@@ -109,41 +85,6 @@ Protected Class RepositoryPackageController
 		End Sub
 	#tag EndMethod
 
-	#tag Method, Flags = &h0
-		Sub RemovePackage(guid as string)
-		  Var codeFile As FolderItem = Self.RepositoryFolder.Child(guid + kPackageCodeFileExt)
-		  If codeFile <> Nil And codeFile.Exists And Not codeFile.IsFolder Then
-		    Var codeFileRemoved As FolderItem = Self.RepositoryFolder.Child(guid + kPackageCodeFileExt + "_removed")
-		    codeFile.MoveTo(codeFileRemoved)
-		  End
-		  
-		  Var jsonFile As FolderItem = Self.RepositoryFolder.Child(guid + kPackageJsonFileExt)
-		  If jsonFile <> Nil And jsonFile.Exists And Not jsonFile.IsFolder Then
-		    Var jsonFileRemoved As FolderItem = Self.RepositoryFolder.Child(guid + kPackageJsonFileExt + "_removed")
-		    jsonFile.MoveTo(jsonFileRemoved)
-		  End
-		End Sub
-	#tag EndMethod
-
-	#tag Method, Flags = &h0
-		Sub Save(package as RepositoryPackage, raw as MemoryBlock = nil)
-		  
-		  // save XOJO code to file
-		  If raw <> Nil Then
-		    Var f1 As FolderItem = Self.RepositoryFolder.Child(package.Guid + kPackageCodeFileExt)
-		    Var t As BinaryStream = BinaryStream.Create(f1, True)
-		    t.Write(raw)
-		    t.Close
-		  End
-		  
-		  // save package json to file 
-		  Var f2 As FolderItem = Self.RepositoryFolder.Child(package.Guid + kPackageJsonFileExt)
-		  Var data As String = package.ToJson
-		  File.WriteAllText(f2, data)
-		  
-		End Sub
-	#tag EndMethod
-
 	#tag Method, Flags = &h21
 		Private Function zCreatePackage(raw as MemoryBlock) As RepositoryPackage
 		  // create a new RepositoryPackage from XOJO data
@@ -161,6 +102,7 @@ Protected Class RepositoryPackageController
 		  package.Version = parser.AttribVersion
 		  package.Description = parser.AttribDescription
 		  package.Category = parser.AttribCategory
+		  package.PackageUrl = parser.AttribPackageUrl
 		  
 		  Return package
 		End Function
@@ -171,24 +113,8 @@ Protected Class RepositoryPackageController
 		Packages() As RepositoryPackage
 	#tag EndProperty
 
-	#tag ComputedProperty, Flags = &h21
-		#tag Getter
-			Get
-			  // FoldrItem pointing to the repository Directory
-			  Var f As New FolderItem(RepositoryFolderPath, FolderItem.PathModes.Native)
-			  
-			  If Not f.Exists Then
-			    f.CreateFolder()
-			  End
-			  
-			  Return f
-			End Get
-		#tag EndGetter
-		Private RepositoryFolder As FolderItem
-	#tag EndComputedProperty
-
-	#tag Property, Flags = &h21
-		Private RepositoryFolderPath As string
+	#tag Property, Flags = &h0
+		PackageSource As PackageSourceInterface
 	#tag EndProperty
 
 
@@ -198,10 +124,7 @@ Protected Class RepositoryPackageController
 	#tag Constant, Name = ClipXojoModule, Type = String, Dynamic = False, Default = \"CbMt", Scope = Public
 	#tag EndConstant
 
-	#tag Constant, Name = kPackageCodeFileExt, Type = String, Dynamic = False, Default = \".code", Scope = Private
-	#tag EndConstant
-
-	#tag Constant, Name = kPackageJsonFileExt, Type = String, Dynamic = False, Default = \".json", Scope = Private
+	#tag Constant, Name = kPackageCodeFileExt, Type = String, Dynamic = False, Default = \".code", Scope = Public
 	#tag EndConstant
 
 	#tag Constant, Name = kRepositoryPath, Type = String, Dynamic = False, Default = \"/Users/stefan/Projekte/Repository", Scope = Private

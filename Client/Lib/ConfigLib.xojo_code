@@ -1,5 +1,5 @@
 #tag Module
-Module ConfigLib
+ Attributes ( "@Version" = "1.0", "@Copyright" = "(c) 2022 - watermann-it.de", "@Guid" = "C50069B3-D670-4E61-AD4C-4FB7FBA3B137" ) Module ConfigLib
 	#tag ViewBehavior
 		#tag ViewProperty
 			Name="Name"

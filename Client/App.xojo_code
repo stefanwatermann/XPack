@@ -5,13 +5,37 @@ Inherits DesktopApplication
 		Sub Opening()
 		  Self.AllowAutoQuit = True
 		  
-		  app.Config = New Configuration("XojoPack")
+		  app.Config = New Configuration("XPack")
 		  
 		  If app.Config.GetConfigFile <> Nil and app.Config.GetConfigFile.Exists Then
 		    app.Config.Load
 		  End
 		End Sub
 	#tag EndEvent
+
+	#tag Event
+		Function UnhandledException(error As RuntimeException) As Boolean
+		  Var d As New MessageDialog
+		  d.Title = "Failure"
+		  d.IconType = MessageDialog.IconTypes.Caution
+		  d.ActionButton.Caption = "OK"
+		  d.Message = "An unhandled error occured. " + error.Message
+		  d.Explanation = "It may be a good advise to restart the app."
+		  Call d.ShowModal
+		  Return True
+		End Function
+	#tag EndEvent
+
+
+	#tag Note, Name = copyright
+		XPack - A package manager solution for XOJO modules
+		===================================================
+		
+		Copyright (c) 2022 Stefan Watermann, Germany - All Rights Reserved.
+		
+		You may use, distribute and modify this code under the terms of the MIT license.
+		
+	#tag EndNote
 
 
 	#tag Property, Flags = &h0
@@ -21,7 +45,7 @@ Inherits DesktopApplication
 	#tag ComputedProperty, Flags = &h0
 		#tag Getter
 			Get
-			  return str(app.MajorVersion) + "." + str(app.MinorVersion) + "." + str(app.NonReleaseVersion)
+			  return str(app.MajorVersion) + "." + str(app.MinorVersion) + "." + str(app.BugVersion) + "." + str(app.NonReleaseVersion)
 			End Get
 		#tag EndGetter
 		VersionString As string
@@ -187,6 +211,14 @@ Inherits DesktopApplication
 			InitialValue=""
 			Type="Integer"
 			EditorType=""
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="VersionString"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="string"
+			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class

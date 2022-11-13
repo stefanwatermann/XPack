@@ -5,6 +5,42 @@ Inherits JsonModelBase
 		Category As string
 	#tag EndProperty
 
+	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
+			  If Self.Version.Contains(".") Then
+			    
+			    // split version string into version-parts
+			    Var s() As String = Self.Version.Split(".")
+			    
+			    // get max length of version-parts
+			    Var m As Integer = 1
+			    For i As Integer = 0 To s.Count - 1
+			      If s(i).Length > m Then
+			        m = s(i).Length
+			      End
+			    Next
+			    
+			    // create format template based on largest version-part
+			    Var f As String
+			    For i As Integer = 1 To m 
+			      f = f + "0"
+			    Next
+			    
+			    Var r As String
+			    For i As Integer = 0 To s.Count - 1
+			      r = r + Format(Val(s(i)), f)
+			    Next
+			    
+			    Return Val("1" + r)
+			  Else
+			    Return Val(Self.Version)
+			  End
+			End Get
+		#tag EndGetter
+		ComparableVersion As Integer
+	#tag EndComputedProperty
+
 	#tag Property, Flags = &h0
 		Copyright As String
 	#tag EndProperty
@@ -31,6 +67,10 @@ Inherits JsonModelBase
 
 	#tag Property, Flags = &h0
 		Name As String
+	#tag EndProperty
+
+	#tag Property, Flags = &h0
+		PackageUrl As string
 	#tag EndProperty
 
 	#tag Property, Flags = &h0
@@ -129,6 +169,22 @@ Inherits JsonModelBase
 			Group="Behavior"
 			InitialValue=""
 			Type="String"
+			EditorType="MultiLineEditor"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="Category"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="string"
+			EditorType="MultiLineEditor"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="PackageUrl"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="string"
 			EditorType="MultiLineEditor"
 		#tag EndViewProperty
 	#tag EndViewBehavior

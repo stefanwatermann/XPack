@@ -143,7 +143,7 @@ Begin DesktopWindow WindowOption
       LockTop         =   True
       MaximumCharactersAllowed=   0
       Password        =   False
-      ReadOnly        =   True
+      ReadOnly        =   False
       Scope           =   0
       TabIndex        =   3
       TabPanelIndex   =   0
@@ -184,7 +184,7 @@ Begin DesktopWindow WindowOption
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   71
+      Top             =   70
       Transparent     =   False
       Underline       =   False
       Visible         =   True

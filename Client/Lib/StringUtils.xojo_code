@@ -1,5 +1,5 @@
 #tag Module
- Attributes ( Version = "1.0.1", Copyright = "watermann-it.de" ) Protected Module StringUtils
+ Attributes ( "@Version" = "1.0.1", "@Copyright" = "(c) 2022 - watermann-it.de", "@Guid" = "9A196C78-B85B-4A82-AB07-DF96995CCFFF" ) Protected Module StringUtils
 	#tag Method, Flags = &h0
 		Function Contains(extends s as String, find as String) As Boolean
 		  Dim i As Integer = s.InStr(find)

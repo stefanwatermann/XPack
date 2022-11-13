@@ -10,7 +10,7 @@ Begin DesktopWindow WindowPackage
    HasFullScreenButton=   False
    HasMaximizeButton=   False
    HasMinimizeButton=   False
-   Height          =   400
+   Height          =   440
    ImplicitInstance=   True
    MacProcID       =   0
    MaximumHeight   =   32000
@@ -23,7 +23,7 @@ Begin DesktopWindow WindowPackage
    Title           =   "Package"
    Type            =   8
    Visible         =   True
-   Width           =   677
+   Width           =   674
    Begin DesktopButton btnSave
       AllowAutoDeactivate=   True
       Bold            =   False
@@ -37,7 +37,7 @@ Begin DesktopWindow WindowPackage
       Height          =   22
       Index           =   -2147483648
       Italic          =   False
-      Left            =   479
+      Left            =   476
       LockBottom      =   True
       LockedInPosition=   True
       LockLeft        =   False
@@ -49,7 +49,7 @@ Begin DesktopWindow WindowPackage
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   360
+      Top             =   400
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -68,7 +68,7 @@ Begin DesktopWindow WindowPackage
       Height          =   22
       Index           =   -2147483648
       Italic          =   False
-      Left            =   574
+      Left            =   571
       LockBottom      =   True
       LockedInPosition=   True
       LockLeft        =   False
@@ -80,7 +80,7 @@ Begin DesktopWindow WindowPackage
       TabPanelIndex   =   0
       TabStop         =   True
       Tooltip         =   ""
-      Top             =   360
+      Top             =   400
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -144,7 +144,7 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   90
+      Top             =   85
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -176,7 +176,7 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   155
+      Top             =   140
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -257,7 +257,7 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   115
+      Top             =   110
       Transparent     =   False
       Underline       =   False
       ValidationMask  =   ""
@@ -298,7 +298,7 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   183
+      Top             =   165
       Transparent     =   False
       Underline       =   False
       ValidationMask  =   ""
@@ -331,7 +331,7 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   217
+      Top             =   250
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -376,7 +376,7 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   245
+      Top             =   275
       Transparent     =   False
       Underline       =   False
       UnicodeMode     =   1
@@ -442,7 +442,7 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   90
+      Top             =   85
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -523,7 +523,7 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   116
+      Top             =   110
       Transparent     =   False
       Underline       =   False
       ValidationMask  =   ""
@@ -556,7 +556,7 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   217
+      Top             =   195
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -578,7 +578,7 @@ Begin DesktopWindow WindowPackage
       HasBorder       =   True
       HasHorizontalScrollbar=   False
       HasVerticalScrollbar=   True
-      Height          =   90
+      Height          =   145
       HideSelection   =   True
       Index           =   -2147483648
       Italic          =   False
@@ -601,7 +601,7 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c00000000
       Tooltip         =   ""
-      Top             =   245
+      Top             =   220
       Transparent     =   False
       Underline       =   False
       UnicodeMode     =   1
@@ -631,15 +631,15 @@ Begin DesktopWindow WindowPackage
       TabIndex        =   17
       TabPanelIndex   =   0
       TabStop         =   True
-      Text            =   "Please note: all attributes have to be set on the XOJO Module (pack* Attributes) and cannot be edited here."
+      Text            =   "Please note: all attributes have to be set on the XOJO Module (@* attributes) and cannot be edited here."
       TextAlignment   =   0
       TextColor       =   &c94110000
       Tooltip         =   ""
-      Top             =   360
+      Top             =   398
       Transparent     =   False
       Underline       =   False
       Visible         =   True
-      Width           =   352
+      Width           =   417
    End
    Begin DesktopLabel Label9
       AllowAutoDeactivate=   True
@@ -667,7 +667,7 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c94110000
       Tooltip         =   ""
-      Top             =   335
+      Top             =   373
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -699,7 +699,7 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   155
+      Top             =   140
       Transparent     =   False
       Underline       =   False
       Visible         =   True
@@ -739,7 +739,80 @@ Begin DesktopWindow WindowPackage
       TextAlignment   =   0
       TextColor       =   &c000000
       Tooltip         =   ""
-      Top             =   183
+      Top             =   165
+      Transparent     =   False
+      Underline       =   False
+      ValidationMask  =   ""
+      Visible         =   True
+      Width           =   300
+   End
+   Begin DesktopLabel Label11
+      AllowAutoDeactivate=   True
+      Bold            =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Height          =   20
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   30
+      LockBottom      =   False
+      LockedInPosition=   True
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      Multiline       =   False
+      Scope           =   0
+      Selectable      =   False
+      TabIndex        =   20
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   "Package URL [@PackageUrl]"
+      TextAlignment   =   0
+      TextColor       =   &c000000
+      Tooltip         =   ""
+      Top             =   195
+      Transparent     =   False
+      Underline       =   False
+      Visible         =   True
+      Width           =   230
+   End
+   Begin DesktopTextField tbPackageUrl
+      AllowAutoDeactivate=   True
+      AllowFocusRing  =   True
+      AllowSpellChecking=   False
+      AllowTabs       =   False
+      BackgroundColor =   &cFFFFFF
+      Bold            =   False
+      Enabled         =   True
+      FontName        =   "System"
+      FontSize        =   0.0
+      FontUnit        =   0
+      Format          =   ""
+      HasBorder       =   True
+      Height          =   22
+      Hint            =   ""
+      Index           =   -2147483648
+      Italic          =   False
+      Left            =   30
+      LockBottom      =   False
+      LockedInPosition=   True
+      LockLeft        =   True
+      LockRight       =   False
+      LockTop         =   True
+      MaximumCharactersAllowed=   0
+      Password        =   False
+      ReadOnly        =   True
+      Scope           =   0
+      TabIndex        =   21
+      TabPanelIndex   =   0
+      TabStop         =   True
+      Text            =   ""
+      TextAlignment   =   0
+      TextColor       =   &c000000
+      Tooltip         =   ""
+      Top             =   220
       Transparent     =   False
       Underline       =   False
       ValidationMask  =   ""
@@ -755,9 +828,9 @@ End
 		  btnSave.Enabled = _
 		  tbGuid.Text.Length > 30 And _
 		  tbVersion.Text.Length > 0 And _
-		  tbPackageName.Text.Length > 3 And _
-		  tbAuthor.Text.Length > 2 And _
-		  self.isNewPackage
+		  tbPackageName.Text.Length > 2 And _
+		  tbCopyRight.Text.Length > 2 And _
+		  Self.isNewPackage
 		End Sub
 	#tag EndEvent
 
@@ -864,6 +937,13 @@ End
 	#tag Event
 		Sub Opening()
 		  me.text = self.Package.Category
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events tbPackageUrl
+	#tag Event
+		Sub Opening()
+		  me.text = self.Package.PackageUrl
 		End Sub
 	#tag EndEvent
 #tag EndEvents

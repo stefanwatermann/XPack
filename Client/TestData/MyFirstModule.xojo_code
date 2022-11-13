@@ -1,5 +1,5 @@
 #tag Module
- Attributes ( "@Version" = "1.10", "@Description" = "Super tolles Modul!", "@Guid" = "EA2715EB-FEB2-49AA-AA4B-029872D11094", "@Author" = "Stefan Watermann", "@Depends" = "", "@Copyright" = "(c) 2022", "@Category" = "Test Data" ) Protected Module MyFirstModule
+ Attributes ( "@Version" = "1.10", "@Description" = "Super tolles Modul!", "@Guid" = "EA2715EB-FEB2-49AA-AA4B-029872D11094", "@Author" = "Stefan Watermann", "@Depends" = "", "@Copyright" = "(c) 2022", "@Category" = "Test Data", "@PackageUrl" = "http://www.watermann-it.de" ) Protected Module MyFirstModule
 	#tag ViewBehavior
 		#tag ViewProperty
 			Name="Name"

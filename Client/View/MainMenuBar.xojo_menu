@@ -52,7 +52,7 @@ Begin Menu MainMenuBar
       Begin DesktopMenuItem HelpXojoPackontheInternet
          SpecialMenu = 0
          Index = -2147483648
-         Text = "Xojo Pack on Github..."
+         Text = "XPack on Github..."
          AutoEnabled = True
          AutoEnable = True
          Visible = True

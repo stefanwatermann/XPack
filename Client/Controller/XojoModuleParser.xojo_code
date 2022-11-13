@@ -84,6 +84,15 @@ Protected Class XojoModuleParser
 	#tag ComputedProperty, Flags = &h0
 		#tag Getter
 			Get
+			  Return zGetAttributeValue("PackageUrl")
+			End Get
+		#tag EndGetter
+		AttribPackageUrl As String
+	#tag EndComputedProperty
+
+	#tag ComputedProperty, Flags = &h0
+		#tag Getter
+			Get
 			  Return zGetAttributeValue("Version")
 			End Get
 		#tag EndGetter
@@ -203,6 +212,22 @@ Protected Class XojoModuleParser
 			InitialValue=""
 			Type="String"
 			EditorType="MultiLineEditor"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="AttribCategory"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="string"
+			EditorType="MultiLineEditor"
+		#tag EndViewProperty
+		#tag ViewProperty
+			Name="AttribPackageUrl"
+			Visible=false
+			Group="Behavior"
+			InitialValue=""
+			Type="String"
+			EditorType=""
 		#tag EndViewProperty
 	#tag EndViewBehavior
 End Class

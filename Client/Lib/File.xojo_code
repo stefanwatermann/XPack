@@ -1,5 +1,5 @@
 #tag Module
- Attributes ( Version = 1.0, Copyright = "watermann-it.de" ) Protected Module File
+ Attributes ( "@Version" = "1.0", "@Copyright" = "(c) 2022 - watermann-it.de", "@Guid" = "91FE84EC-3D79-415A-9EE7-3E6DB1FF9150" ) Protected Module File
 	#tag Method, Flags = &h0
 		Sub AppendText(f as FolderItem, data as string)
 		  WriteAllText(f, data, Encodings.UTF8, true)

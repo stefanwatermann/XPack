@@ -20,13 +20,14 @@ Begin DesktopWindow WindowMain
    MinimumHeight   =   400
    MinimumWidth    =   600
    Resizeable      =   True
-   Title           =   "XOJO Package Manager (v%1)"
+   Title           =   "XPack - XOJO Package Manager (v%1)"
    Type            =   0
    Visible         =   True
    Width           =   600
    Begin Timer ClipboardObserver
+      Enabled         =   True
       Index           =   -2147483648
-      LockedInPosition=   True
+      LockedInPosition=   False
       Period          =   1000
       RunMode         =   2
       Scope           =   2
@@ -44,12 +45,12 @@ Begin DesktopWindow WindowMain
       Italic          =   False
       Left            =   0
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   True
       Panels          =   ""
-      Scope           =   0
+      Scope           =   2
       SmallTabs       =   False
       TabDefinition   =   "Project\rRepository"
       TabIndex        =   11
@@ -57,9 +58,9 @@ Begin DesktopWindow WindowMain
       TabStop         =   True
       Tooltip         =   ""
       Top             =   10
-      Transparent     =   False
+      Transparent     =   True
       Underline       =   False
-      Value           =   0
+      Value           =   1
       Visible         =   True
       Width           =   600
       Begin DesktopButton btnCreateGuid
@@ -72,13 +73,13 @@ Begin DesktopWindow WindowMain
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   22
+         Height          =   23
          Index           =   -2147483648
          InitialParent   =   "TabPanel1"
          Italic          =   False
-         Left            =   375
+         Left            =   370
          LockBottom      =   False
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
@@ -87,12 +88,12 @@ Begin DesktopWindow WindowMain
          TabIndex        =   1
          TabPanelIndex   =   2
          TabStop         =   True
-         Tooltip         =   "Create new Guid to be used by Attribute 'packGuid'."
-         Top             =   48
+         Tooltip         =   "Create new Guid to be used as attribute '@Guid'."
+         Top             =   60
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   50
+         Width           =   60
       End
       Begin DesktopButton btnEditPackage
          AllowAutoDeactivate=   True
@@ -104,13 +105,13 @@ Begin DesktopWindow WindowMain
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   22
+         Height          =   23
          Index           =   -2147483648
          InitialParent   =   "TabPanel1"
          Italic          =   False
-         Left            =   445
+         Left            =   435
          LockBottom      =   False
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
@@ -120,11 +121,11 @@ Begin DesktopWindow WindowMain
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   "Show selected package from repository"
-         Top             =   48
+         Top             =   60
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   70
+         Width           =   80
       End
       Begin DesktopButton btnDeletePackage
          AllowAutoDeactivate=   True
@@ -136,13 +137,13 @@ Begin DesktopWindow WindowMain
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   22
+         Height          =   23
          Index           =   -2147483648
          InitialParent   =   "TabPanel1"
          Italic          =   False
-         Left            =   520
+         Left            =   510
          LockBottom      =   False
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
@@ -152,11 +153,11 @@ Begin DesktopWindow WindowMain
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   "Remove selected package from repository"
-         Top             =   48
+         Top             =   60
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   70
+         Width           =   80
       End
       Begin DesktopLabel lbPackages
          AllowAutoDeactivate=   True
@@ -171,7 +172,7 @@ Begin DesktopWindow WindowMain
          Italic          =   False
          Left            =   20
          LockBottom      =   False
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   False
          LockTop         =   True
@@ -185,7 +186,7 @@ Begin DesktopWindow WindowMain
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   48
+         Top             =   60
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -201,13 +202,13 @@ Begin DesktopWindow WindowMain
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   22
+         Height          =   23
          Index           =   -2147483648
          InitialParent   =   "TabPanel1"
          Italic          =   False
-         Left            =   135
+         Left            =   120
          LockBottom      =   False
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
@@ -217,11 +218,11 @@ Begin DesktopWindow WindowMain
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   "Put selected package on clipboard to be pasted into a XOJO project."
-         Top             =   48
+         Top             =   60
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   100
+         Width           =   110
       End
       Begin DesktopButton btnReadModuleFromClip
          AllowAutoDeactivate=   True
@@ -233,13 +234,13 @@ Begin DesktopWindow WindowMain
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   22
+         Height          =   23
          Index           =   -2147483648
          InitialParent   =   "TabPanel1"
          Italic          =   False
-         Left            =   240
+         Left            =   230
          LockBottom      =   False
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
@@ -249,11 +250,11 @@ Begin DesktopWindow WindowMain
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   "Clipboard contains a XOJO Module that can be read as a new package."
-         Top             =   48
+         Top             =   60
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   120
+         Width           =   130
       End
       Begin DesktopListBox listRepoPackages
          AllowAutoDeactivate=   True
@@ -278,14 +279,14 @@ Begin DesktopWindow WindowMain
          HasHorizontalScrollbar=   False
          HasVerticalScrollbar=   True
          HeadingIndex    =   -1
-         Height          =   337
+         Height          =   320
          Index           =   -2147483648
          InitialParent   =   "TabPanel1"
          InitialValue    =   "Guid	Name	Version	Owner	CreateAt"
          Italic          =   False
          Left            =   10
          LockBottom      =   True
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   True
          LockTop         =   True
@@ -296,7 +297,7 @@ Begin DesktopWindow WindowMain
          TabPanelIndex   =   2
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   80
+         Top             =   100
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -329,7 +330,7 @@ Begin DesktopWindow WindowMain
          LineHeight      =   0.0
          LineSpacing     =   1.0
          LockBottom      =   True
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   True
          LockTop         =   False
@@ -375,14 +376,14 @@ Begin DesktopWindow WindowMain
          HasHorizontalScrollbar=   False
          HasVerticalScrollbar=   True
          HeadingIndex    =   -1
-         Height          =   337
+         Height          =   320
          Index           =   -2147483648
          InitialParent   =   "TabPanel1"
          InitialValue    =   "Guid	Name	Version	Owner	CreateAt	Update"
          Italic          =   False
          Left            =   10
          LockBottom      =   True
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   True
          LockTop         =   True
@@ -393,7 +394,7 @@ Begin DesktopWindow WindowMain
          TabPanelIndex   =   1
          TabStop         =   True
          Tooltip         =   ""
-         Top             =   80
+         Top             =   100
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -412,9 +413,9 @@ Begin DesktopWindow WindowMain
          Index           =   -2147483648
          InitialParent   =   "TabPanel1"
          Italic          =   False
-         Left            =   10
+         Left            =   20
          LockBottom      =   False
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   False
          LockTop         =   True
@@ -428,7 +429,7 @@ Begin DesktopWindow WindowMain
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   49
+         Top             =   60
          Transparent     =   False
          Underline       =   False
          Visible         =   True
@@ -452,9 +453,9 @@ Begin DesktopWindow WindowMain
          Index           =   -2147483648
          InitialParent   =   "TabPanel1"
          Italic          =   False
-         Left            =   100
+         Left            =   120
          LockBottom      =   False
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   True
          LockTop         =   True
@@ -469,12 +470,12 @@ Begin DesktopWindow WindowMain
          TextAlignment   =   0
          TextColor       =   &c000000
          Tooltip         =   ""
-         Top             =   49
+         Top             =   60
          Transparent     =   False
          Underline       =   False
          ValidationMask  =   ""
          Visible         =   True
-         Width           =   375
+         Width           =   355
       End
       Begin DesktopButton btnScanProjectRoot
          AllowAutoDeactivate=   True
@@ -486,13 +487,13 @@ Begin DesktopWindow WindowMain
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   22
+         Height          =   23
          Index           =   -2147483648
          InitialParent   =   "TabPanel1"
          Italic          =   False
-         Left            =   520
+         Left            =   510
          LockBottom      =   False
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
@@ -502,11 +503,11 @@ Begin DesktopWindow WindowMain
          TabPanelIndex   =   1
          TabStop         =   True
          Tooltip         =   "Find packages on referenced XOJO project."
-         Top             =   48
+         Top             =   60
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   70
+         Width           =   80
       End
       Begin DesktopButton btnSelectProjectRoot
          AllowAutoDeactivate=   True
@@ -518,13 +519,13 @@ Begin DesktopWindow WindowMain
          FontName        =   "System"
          FontSize        =   0.0
          FontUnit        =   0
-         Height          =   22
+         Height          =   23
          Index           =   -2147483648
          InitialParent   =   "TabPanel1"
          Italic          =   False
-         Left            =   480
+         Left            =   475
          LockBottom      =   False
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   False
          LockRight       =   True
          LockTop         =   True
@@ -534,11 +535,11 @@ Begin DesktopWindow WindowMain
          TabPanelIndex   =   1
          TabStop         =   True
          Tooltip         =   "Select root path of a XOJO project."
-         Top             =   48
+         Top             =   60
          Transparent     =   False
          Underline       =   False
          Visible         =   True
-         Width           =   30
+         Width           =   40
       End
       Begin DesktopTextArea tbPackageDescriptionProject
          AllowAutoDeactivate=   True
@@ -565,7 +566,7 @@ Begin DesktopWindow WindowMain
          LineHeight      =   0.0
          LineSpacing     =   1.0
          LockBottom      =   True
-         LockedInPosition=   True
+         LockedInPosition=   False
          LockLeft        =   True
          LockRight       =   True
          LockTop         =   False
@@ -597,6 +598,7 @@ Begin DesktopWindow WindowMain
          BorderColor     =   &c80808000
          BorderRadius    =   5
          BorderWidth     =   0
+         DoubleBuffer    =   False
          Enabled         =   True
          Height          =   85
          Image           =   787865599
@@ -614,6 +616,7 @@ Begin DesktopWindow WindowMain
          TabStop         =   True
          Tooltip         =   ""
          Top             =   429
+         Transparent     =   False
          Visible         =   True
          Width           =   85
       End
@@ -626,6 +629,7 @@ Begin DesktopWindow WindowMain
          BorderColor     =   &c80808000
          BorderRadius    =   5
          BorderWidth     =   0
+         DoubleBuffer    =   False
          Enabled         =   True
          Height          =   85
          Image           =   787865599
@@ -643,6 +647,7 @@ Begin DesktopWindow WindowMain
          TabStop         =   True
          Tooltip         =   ""
          Top             =   429
+         Transparent     =   False
          Visible         =   True
          Width           =   85
       End
@@ -660,7 +665,7 @@ Begin DesktopWindow WindowMain
       Italic          =   False
       Left            =   20
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   False
@@ -690,7 +695,7 @@ Begin DesktopWindow WindowMain
       InitialParent   =   ""
       Left            =   0
       LockBottom      =   True
-      LockedInPosition=   True
+      LockedInPosition=   False
       LockLeft        =   True
       LockRight       =   True
       LockTop         =   False
@@ -749,7 +754,16 @@ End
 
 	#tag Method, Flags = &h0
 		Sub Constructor()
-		  Self.PackageController = New RepositoryPackageController(app.Config.RepositoryRootFolder)
+		  // create PackageSoure instance based on type of source
+		  Var packageSource As PackageSourceInterface
+		  If app.Config.RepositoryRootFolder.BeginsWith("http") Then
+		    packageSource = New RemotePackageSource(app.Config.RepositoryRootFolder)
+		  Else
+		    packageSource = New FileBasedPackageSource(app.Config.RepositoryRootFolder)
+		  End
+		  
+		  
+		  Self.PackageController = New RepositoryPackageController(packageSource)
 		  
 		  // Calling the overridden superclass constructor.
 		  Super.Constructor
@@ -758,12 +772,23 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
+		Private Function ContainsXojoFileProject(folder as FolderItem) As Boolean
+		  For Each file As FolderItem In folder.Children
+		    If file.name.EndsWith(".xojo_project") then
+		      Return True
+		    End
+		  Next
+		  Return False
+		End Function
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
 		Private Sub EditPackage(package as RepositoryPackage, isNew as Boolean)
 		  Var dlg As New WindowPackage(package, isNew)
 		  dlg.ShowModal
 		  
 		  If dlg.OkClicked Then
-		    Self.PackageController.Save(package)
+		    Self.PackageController.PackageSource.SavePackage(package)
 		    Self.ReadPackages
 		    SetStatusText("Package saved.")
 		  End
@@ -771,8 +796,53 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
+		Private Sub ExportPackage(package as RepositoryPackage)
+		  Var dlg As New SaveFileDialog
+		  dlg.ActionButtonCaption = "Export Package"
+		  dlg.Title = "Export package to file"
+		  dlg.PromptText = "Export package to file"
+		  dlg.SuggestedFileName = Self.SelectedPackageRepo.Guid + Self.PackageController.kPackageCodeFileExt
+		  
+		  If dlg.ShowModal <> Nil Then
+		    Self.PackageController.Export(Self.SelectedPackageRepo.Guid, dlg.Result)
+		  End
+		  
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
+		Private Sub ImportPackage()
+		  Var fdlg As New OpenFileDialog
+		  fdlg.ActionButtonCaption = "Import Package"
+		  fdlg.Title = "Import package from file"
+		  fdlg.PromptText = "Import package from file"
+		  fdlg.Filter = FileTypePackageRaw.PackageFile.Extensions
+		  
+		  If fdlg.ShowModal <> Nil Then
+		    If Not fdlg.Result.Name.EndsWith(FileTypePackageRaw.PackageFile.Extensions) Then
+		      MessageBox("File-type not supported, please select a '*.code' file.")
+		      Return
+		    End
+		    
+		    Var raw As MemoryBlock = Self.PackageController.Import(fdlg.Result)
+		    Var package As RepositoryPackage = Self.PackageController.CreatePackage(raw)
+		    
+		    Var dlg As New WindowPackage(package, True)
+		    dlg.ShowModal
+		    
+		    If dlg.OkClicked Then
+		      Self.PackageController.PackageSource.SavePackage(package, raw)
+		      Self.ReadPackages
+		      SetStatusText("Package imported.")
+		    End
+		    
+		  End
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
 		Private Sub PutModuleOnClip(guid as string)
-		  Var a As MemoryBlock = Self.PackageController.GetPackageCode(guid)
+		  Var a As MemoryBlock = Self.PackageController.PackageSource.ReadPackageCode(guid)
 		  
 		  Var c As New Clipboard
 		  c.RawData(RepositoryPackageController.ClipXojoModule) = a
@@ -798,7 +868,7 @@ End
 		Private Sub ReadPackages()
 		  Self.listRepoPackages.RemoveAllRows
 		  
-		  Self.PackageController.ReadPackages
+		  Self.PackageController.Packages = Self.PackageController.PackageSource.ReadPackages
 		  
 		  For Each package As RepositoryPackage In Self.PackageController.Packages
 		    
@@ -816,6 +886,48 @@ End
 	#tag EndMethod
 
 	#tag Method, Flags = &h21
+		Private Sub ScanProjectFolder(projectFolderPath as string)
+		  Var f As New FolderItem(projectFolderPath)
+		  
+		  If Not ContainsXojoFileProject(f) Then
+		    MessageBox("Selected folder does not contain a XOJO text-file based project.")
+		    Return
+		  End
+		  
+		  Var projectPackages() As RepositoryPackage
+		  
+		  Self.PackageController.ReadProjectPackages(f, projectPackages)
+		  
+		  Self.listProjectPackages.RemoveAllRows
+		  
+		  For Each projectPackage As RepositoryPackage In projectPackages
+		    
+		    // try get correspondign repo-package
+		    Var repoPackage As RepositoryPackage = Self.PackageController.GetPackage(projectPackage.Guid)
+		    
+		    Var cells() As String
+		    cells.Add(projectPackage.Guid)
+		    cells.Add(projectPackage.Name.Replace(".xojo_code", ""))
+		    cells.Add(Str(projectPackage.Version))
+		    cells.Add(projectPackage.CreatedBy)
+		    If projectPackage.CreatedAt <> Nil Then cells.Add(projectPackage.CreatedAt.SQLDateTime) Else cells.Add("")
+		    
+		    If repoPackage = Nil Then
+		      cells.Add("-")
+		    ElseIf repoPackage.ComparableVersion > projectPackage.ComparableVersion Then
+		      cells.Add("yes")
+		    Else
+		      cells.Add("no")
+		    End
+		    
+		    Self.listProjectPackages.AddRow(cells)
+		    Self.listProjectPackages.RowTagAt(Self.listProjectPackages.LastAddedRowIndex) = projectPackage
+		    
+		  Next
+		End Sub
+	#tag EndMethod
+
+	#tag Method, Flags = &h21
 		Private Sub SetStatusText(t as string)
 		  self.lbStatusText.Text = t
 		End Sub
@@ -824,7 +936,7 @@ End
 	#tag Method, Flags = &h21
 		Private Sub ShowAboutDialog()
 		  MessageBox( _
-		  "*** XOJOPack ***" + EndOfLine + _
+		  "*** XPack ***" + EndOfLine + _
 		  "A Package-Manager for XOJO Modules." + EndOfLine + _
 		  "(c) 2022 by Stefan Watermann, Germany")
 		End Sub
@@ -837,6 +949,19 @@ End
 		End Sub
 	#tag EndMethod
 
+
+	#tag ComputedProperty, Flags = &h21
+		#tag Getter
+			Get
+			  If Color.IsDarkMode Then
+			    return kListRowAlternateColorDark
+			  Else
+			    Return kListRowAlternateColor
+			  End
+			End Get
+		#tag EndGetter
+		Private ListRowAlternativeColor As Color
+	#tag EndComputedProperty
 
 	#tag Property, Flags = &h21
 		Private PackageController As RepositoryPackageController
@@ -853,7 +978,10 @@ End
 	#tag Constant, Name = kListRowAlternateColor, Type = Color, Dynamic = False, Default = \"&cF2F2F400", Scope = Private
 	#tag EndConstant
 
-	#tag Constant, Name = kXojoPackGithubUrl, Type = String, Dynamic = False, Default = \"https://github.com/stefanwatermann/XojoPack", Scope = Private
+	#tag Constant, Name = kListRowAlternateColorDark, Type = Color, Dynamic = False, Default = \"&c222222", Scope = Private
+	#tag EndConstant
+
+	#tag Constant, Name = kXojoPackGithubUrl, Type = String, Dynamic = False, Default = \"https://github.com/stefanwatermann/XPack", Scope = Private
 	#tag EndConstant
 
 
@@ -871,6 +999,15 @@ End
 		  
 		  If btnReadModuleFromClip.Enabled Then
 		    SetStatusText("XOJO code available to be added as package.")
+		  End
+		End Sub
+	#tag EndEvent
+#tag EndEvents
+#tag Events TabPanel1
+	#tag Event
+		Sub PanelChanged()
+		  If Me.SelectedPanelIndex = 1 Then
+		    ReadPackages
 		  End
 		End Sub
 	#tag EndEvent
@@ -902,7 +1039,7 @@ End
 		  Var b As MessageDialogButton = d.ShowModal
 		  
 		  If b = d.ActionButton Then
-		    Self.PackageController.RemovePackage(SelectedPackageRepo.Guid)
+		    Self.PackageController.PackageSource.RemovePackage(SelectedPackageRepo.Guid)
 		    Self.ReadPackages
 		    SetStatusText("Package removed.")
 		  End
@@ -940,7 +1077,7 @@ End
 		  dlg.ShowModal
 		  
 		  If dlg.OkClicked Then
-		    Self.PackageController.Save(package, raw)
+		    Self.PackageController.PackageSource.SavePackage(package, raw)
 		    Self.ReadPackages
 		    SetStatusText("Package created.")
 		  End
@@ -999,6 +1136,13 @@ End
 		    mnuShow.Name = "mnuShow"
 		    base.AddMenu(mnuShow)
 		    
+		  Else
+		    
+		    Var mnuImport As New DesktopMenuItem
+		    mnuImport.Text = "Import Package..."
+		    mnuImport.Name = "mnuImport"
+		    base.AddMenu(mnuImport)
+		    
 		  End
 		End Function
 	#tag EndEvent
@@ -1007,17 +1151,19 @@ End
 		  Select Case selectedItem.Name
 		    
 		  Case "mnuCopy"
-		    PutModuleOnClip(SelectedPackageRepo.Guid)
+		    PutModuleOnClip(Self.SelectedPackageRepo.Guid)
 		    Return True
 		    
 		  Case "mnuShow"
-		    EditPackage(Self.SelectedPackageRepo, false)
+		    EditPackage(Self.SelectedPackageRepo, False)
 		    Return True
 		    
 		  Case "mnuExport"
+		    ExportPackage(Self.SelectedPackageRepo)
 		    Return True
 		    
 		  Case "mnuImport"
+		    ImportPackage()
 		    Return True
 		    
 		  End
@@ -1028,7 +1174,7 @@ End
 	#tag Event
 		Function PaintCellBackground(g As Graphics, row As Integer, column As Integer) As Boolean
 		  If row Mod 2 = 0 Then
-		    g.DrawingColor = kListRowAlternateColor
+		    g.DrawingColor = self.ListRowAlternativeColor
 		    g.FillRectangle(0, 0, g.Width, g.Height)
 		  End
 		  
@@ -1096,7 +1242,7 @@ End
 	#tag Event
 		Function PaintCellBackground(g As Graphics, row As Integer, column As Integer) As Boolean
 		  If row Mod 2 = 0 Then
-		    g.DrawingColor = kListRowAlternateColor
+		    g.DrawingColor = self.ListRowAlternativeColor
 		    g.FillRectangle(0, 0, g.Width, g.Height)
 		  End
 		  
@@ -1117,40 +1263,16 @@ End
 		  me.Text = app.Config.LastXojoProject
 		End Sub
 	#tag EndEvent
+	#tag Event
+		Sub TextChanged()
+		  btnScanProjectRoot.Enabled = me.text.Length > 1
+		End Sub
+	#tag EndEvent
 #tag EndEvents
 #tag Events btnScanProjectRoot
 	#tag Event
 		Sub Pressed()
-		  Var f As New FolderItem(tbProjectRoot.Text)
-		  
-		  Var projectPackages() As RepositoryPackage
-		  
-		  Self.PackageController.ReadProjectPackages(f, projectPackages)
-		  
-		  Self.listProjectPackages.RemoveAllRows
-		  
-		  For Each projectPackage As RepositoryPackage In projectPackages
-		    
-		    // try get correspondign repo-package
-		    Var repoPackage As RepositoryPackage = Self.PackageController.GetPackage(projectPackage.Guid)
-		    
-		    Var cells() As String
-		    cells.Add(projectPackage.Guid)
-		    cells.Add(projectPackage.Name.Replace(".xojo_code", ""))
-		    cells.Add(Str(projectPackage.Version))
-		    cells.Add(projectPackage.CreatedBy)
-		    If projectPackage.CreatedAt <> Nil Then cells.Add(projectPackage.CreatedAt.SQLDateTime) Else cells.Add("")
-		    
-		    If repoPackage <> Nil And repoPackage.Version <> projectPackage.Version Then
-		      cells.Add("yes")
-		    Else
-		      cells.Add("no")
-		    End
-		    
-		    Self.listProjectPackages.AddRow(cells)
-		    Self.listProjectPackages.RowTagAt(Self.listProjectPackages.LastAddedRowIndex) = projectPackage
-		    
-		  Next
+		  ScanProjectFolder(tbProjectRoot.Text)
 		End Sub
 	#tag EndEvent
 #tag EndEvents
