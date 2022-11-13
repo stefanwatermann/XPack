@@ -52,3 +52,6 @@ The client app allows to use a **locally hosted file-based repository** or a **r
 
 ### Server
 A server app is currently in early development stage. It is intended to be hosted on a private local network and **NOT public on the internet**. There is curently NO security (logon, api-key, etc.) implemented. 
+
+![image](https://user-images.githubusercontent.com/73022584/201532859-6f7cd897-b721-437b-851d-d3c82ecc2ad8.png)
+
