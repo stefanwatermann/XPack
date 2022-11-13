@@ -47,4 +47,4 @@ There is a client app avaliable, which allows to use a **locally hosted file-bas
 
 
 
-A server app is currently not available.
+A server app is currently as early development version available.
