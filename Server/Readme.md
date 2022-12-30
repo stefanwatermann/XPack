@@ -23,6 +23,6 @@ Use the 'xpackapi.config' file to configure the path to the repository folder on
 
 ## Point XPack client to a server repository
 
-To use the server repository instead of a local (shared) folder simply enter the base url of teh server repository into the preferences dialog of the XPack client.
+To use the server repository instead of a local (shared) folder simply enter the base url of the server repository into the preferences dialog of the XPack client.
 
 <img width="595" alt="image" src="https://user-images.githubusercontent.com/73022584/201533119-8148fe6d-8920-464d-af2d-8935431f8c6f.png">
